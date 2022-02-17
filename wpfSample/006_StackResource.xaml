@@ -1,0 +1,34 @@
+﻿<Window x:Class="wpfSample._006_StackResource"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfSample"
+        mc:Ignorable="d"
+        Title="_6_StackResource" Height="300" Width="300">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="ButtonBackColor" Color="DarkBlue"></SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonForeColor" Color="White"></SolidColorBrush>
+    </Window.Resources>
+    
+    
+    <Grid>
+        <StackPanel>
+            <Button Content="AAA"
+                    FontSize="40"
+                    Background="{StaticResource ButtonBackColor}"
+                    Foreground="{StaticResource ButtonForeColor}"></Button>
+            <Button Content="BBB"
+                    FontSize="40"
+                    Background="{StaticResource ButtonBackColor}"
+                    Foreground="{StaticResource ButtonForeColor}"></Button>
+            <Button Content="CCC"
+                    FontSize="40"
+                    Background="{StaticResource ButtonBackColor}"
+                    Foreground="{StaticResource ButtonForeColor}"></Button>
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>
