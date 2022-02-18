@@ -1,0 +1,39 @@
+﻿<Window x:Class="wpfSample._017_GroupBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfSample"
+        mc:Ignorable="d"
+        Title="_017_GroupBox" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <GroupBox Margin="10"
+                      Header="Group A"
+                      FontSize="20">
+                <StackPanel>
+                    <RadioButton FontSize="20" Content="AAA"></RadioButton>
+                    <RadioButton FontSize="20" Content="BBB"></RadioButton>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Margin="10">
+                <GroupBox.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox Content="Check Box"
+                                  FontSize="20"></CheckBox>
+                        <TextBlock Text="AAA"
+                                   FontSize="20"
+                                   Margin="10,0,0,0"></TextBlock>
+                    </StackPanel>
+                </GroupBox.Header>
+                <StackPanel>
+                    <RadioButton FontSize="20"
+                                 Content="CCC"></RadioButton>
+                    <RadioButton FontSize="20"
+                                 Content="DDD"></RadioButton>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

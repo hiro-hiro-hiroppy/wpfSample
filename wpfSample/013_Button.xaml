@@ -1,0 +1,40 @@
+﻿<Window x:Class="wpfSample._013_Button"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfSample"
+        mc:Ignorable="d"
+        Title="_013_Button" Height="300" Width="300">
+    <Grid>
+        <StackPanel>
+            <Button Margin="10"
+                    x:Name="NormalButton"
+                    Click="NormalButton_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Fill="Red"
+                                 Width="15"
+                                 Height="15"
+                                 Margin="0,0,30,0"></Ellipse>
+                        <TextBlock Text="AAA"></TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+            <RepeatButton Margin="10"
+                          Content="repeat"
+                          FontSize="20"
+                          x:Name="RepeatButton"
+                          Click="RepeatButton_Click"
+                          Interval="2000"
+                          Delay="5000"></RepeatButton>
+
+            <ToggleButton Margin="10"
+                          Content="toggle"
+                          FontSize="20"
+                          x:Name="MyToggleButton"
+                          Click="MyToggleButton_Click"></ToggleButton>
+        </StackPanel>
+    </Grid>
+</Window>
