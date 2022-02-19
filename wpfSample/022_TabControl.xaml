@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfSample"
         mc:Ignorable="d"
-        Title="_022_TabControl" Height="450" Width="800">
+        Title="_022_TabControl" Height="200" Width="200">
     <Grid>
-        
+        <TabControl x:Name="MyTabControl"
+                    Margin="20">
+            <TabItem Header="AAA">
+                <StackPanel>
+                    <TextBox Margin="10"></TextBox>
+                    <Button Content="Save"
+                            Margin="10"></Button>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="BBB">
+                <StackPanel>
+                    <TextBox Margin="10"></TextBox>
+                    <Button Content="Search"
+                            Margin="10"></Button>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

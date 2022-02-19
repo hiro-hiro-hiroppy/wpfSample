@@ -13,15 +13,18 @@ using System.Windows.Shapes;
 namespace wpfSample
 {
     /// <summary>
-    /// _022_TabControl.xaml の相互作用ロジック
+    /// _025_Menu.xaml の相互作用ロジック
     /// </summary>
-    public partial class _022_TabControl : Window
+    public partial class _025_Menu : Window
     {
-        public _022_TabControl()
+        public _025_Menu()
         {
             InitializeComponent();
+        }
 
-            MyTabControl.SelectedIndex = 1;
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

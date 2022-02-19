@@ -13,15 +13,13 @@ using System.Windows.Shapes;
 namespace wpfSample
 {
     /// <summary>
-    /// _022_TabControl.xaml の相互作用ロジック
+    /// _024_Text.xaml の相互作用ロジック
     /// </summary>
-    public partial class _022_TabControl : Window
+    public partial class _024_Text : Window
     {
-        public _022_TabControl()
+        public _024_Text()
         {
             InitializeComponent();
-
-            MyTabControl.SelectedIndex = 1;
         }
     }
 }

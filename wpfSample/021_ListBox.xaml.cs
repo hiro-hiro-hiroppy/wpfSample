@@ -52,7 +52,6 @@ namespace wpfSample
 
         }
 
-
         public sealed class Dto
         {
             public Dto(string fileName, string name)
