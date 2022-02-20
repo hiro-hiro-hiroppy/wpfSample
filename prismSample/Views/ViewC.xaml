@@ -1,14 +1,16 @@
-﻿<UserControl x:Class="prismSample.Views.ViewB"
+﻿<UserControl x:Class="prismSample.Views.ViewC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
         <StackPanel>
-            <Label Content="ViewB画面"
-                   FontSize="30"></Label>
-            <Label Content="{Binding MyLabel}"></Label>
-            <TextBox></TextBox>
+            <Label Content="ViewC画面"
+                   FontSize="30"
+                   Foreground="Blue"></Label>
+            <TextBox Text="{Binding ViewCTextBox}"></TextBox>
+            <Button Content="OK"
+                    Command="{Binding OKButton}"></Button>
         </StackPanel>
     </Grid>
 </UserControl>
