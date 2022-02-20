@@ -11,6 +11,13 @@ namespace prismSample.ViewModels
     {
         private readonly IRegionManager _regionManager;
         private readonly IDialogService _dialogService;
+        private bool _showAEnabled = false;
+        public bool ShowAEnabled
+        {
+            get { return _showAEnabled; }
+            set { SetProperty(ref _showAEnabled, value); }
+        }
+
         private string _title = "PrismSample";
         public string Title
         {
@@ -32,6 +39,7 @@ namespace prismSample.ViewModels
 
         private void SystemDateUpdateButtonExecute()
         {
+            ShowAEnabled = true;
             SystemDateLabel = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
         }
 
@@ -79,14 +87,27 @@ namespace prismSample.ViewModels
             }
         }
 
+        /// <summary>
+        /// ViewD表示ボタン
+        /// </summary>
+        public DelegateCommand ShowViewDButton { get; set; }
+
+        private void ShowViewDButtonExecute()
+        {
+            _regionManager.RequestNavigate("ContentRegion", nameof(ViewD));
+        }
+
         public MainWindowViewModel(IRegionManager regionManager, IDialogService dialogService)
         {
             _regionManager = regionManager;
             _dialogService = dialogService;
             SystemDateUpdateButton = new DelegateCommand(SystemDateUpdateButtonExecute);
-            ShowViewAButton = new DelegateCommand(ShowViewAButtonExecute);
+            //ShowViewAButton = new DelegateCommand(ShowViewAButtonExecute);
+            ShowViewAButton = new DelegateCommand(ShowViewAButtonExecute).ObservesCanExecute(() => ShowAEnabled);
+            
             ShowViewBButton = new DelegateCommand(ShowViewBButtonExecute);
             ShowViewCButton = new DelegateCommand(ShowViewCButtonExecute);
+            ShowViewDButton = new DelegateCommand(ShowViewDButtonExecute);
         }
     }
 }
