@@ -1,14 +1,17 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using prismSample.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace prismSample.ViewModels
 {
-    public class ViewBViewModel : BindableBase, INavigationAware
+    public class ViewBViewModel : BindableBase, IConfirmNavigationRequest
     {
+        IMessageService _messageService;
+
         private string _myLabel = string.Empty;
         public string MyLabel
         {
@@ -16,9 +19,14 @@ namespace prismSample.ViewModels
             set { SetProperty(ref _myLabel, value); }
         }
 
-        public ViewBViewModel()
+        public ViewBViewModel() : this(new MessageService())
         {
 
+        }
+
+        public ViewBViewModel(IMessageService messageService)
+        {
+            _messageService = messageService;
         }
 
         /// <summary>
@@ -53,6 +61,14 @@ namespace prismSample.ViewModels
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
             //throw new NotImplementedException();
+        }
+
+        public void ConfirmNavigationRequest(NavigationContext navigationContext, Action<bool> continuationCallback)
+        {
+            if(_messageService.Question("保存せずとじますか？") == System.Windows.MessageBoxResult.OK)
+            {
+                continuationCallback(true);
+            }
         }
     }
 }

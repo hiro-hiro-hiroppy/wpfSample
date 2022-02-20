@@ -20,6 +20,7 @@ namespace prismSample
             containerRegistry.RegisterForNavigation<ViewA>();
             containerRegistry.RegisterForNavigation<ViewB>();
             containerRegistry.RegisterDialog<ViewC, ViewCViewModel>();
+            containerRegistry.RegisterDialog<MessageBoxView, MessageBoxViewViewModel>();
         }
     }
 }
